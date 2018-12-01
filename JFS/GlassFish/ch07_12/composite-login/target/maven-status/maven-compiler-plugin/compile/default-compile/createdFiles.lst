@@ -1,0 +1,4 @@
+com\corejsf\Registrar.class
+com\corejsf\PasswordValidator.class
+com\corejsf\User.class
+com\corejsf\LoginActionListener.class

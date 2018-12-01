@@ -1,0 +1,14 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<jnlp spec = "1.0+"codebase = "file:///" href = "Lotto.jnlp" >
+<information>
+<title>Lotto Application</title>
+<vendor>Java in easy steps</vendor>
+<homepage href = "http://www.ineasysteps.com" />
+<offline-allowed />
+</information><security><all-permissions/></security>
+<resources>
+<jar href = "Lotto.jar" />
+<j2se version = "1.6+"href = "http://java.sun.com/products/autodl/j2se" />
+</resources>
+<application-desc main-class = "Lotto" />
+</jnlp>

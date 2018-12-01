@@ -1,0 +1,1 @@
+ru.smith.managedbeans.Customer

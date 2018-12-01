@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Mar 28 11:53:47 GMT+03:00 2017:
+ Производится загрузка Derby версии The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): экземпляр a816c00e-015b-141e-ff3d-000000b0e4f0
+в каталоге базы данных G:\Berd\AccountDatabase sun.misc.Launcher$AppClassLoader@b4aac2 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_121-b13
+user.dir=G:\Berd
+os.name=Windows XP
+os.arch=x86
+os.version=5.1
+derby.system.home=null
+Запущен загрузчик классов базы данных - derby.database.classpath=''

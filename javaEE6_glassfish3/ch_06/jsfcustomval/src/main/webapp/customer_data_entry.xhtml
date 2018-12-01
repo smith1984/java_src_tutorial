@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+  <h:head>
+    <title>Ввод сведений о заказчике</title>
+  </h:head>
+  <h:body>
+    <h:outputStylesheet library="css" name="styles.css" target="body"/>
+    <h:form>
+      <h:messages></h:messages>
+      <h:panelGrid columns="2"
+                   columnClasses="rightAlign,leftAlign">
+        <h:outputText value="Имя:">
+        </h:outputText>
+        <h:inputText label="Имя"
+                     value="#{customer.firstName}"
+                     required="true" validator="#{alphaValidator.validateAlpha}">
+          <f:validateLength minimum="2" maximum="30">
+          </f:validateLength>
+        </h:inputText>
+        <h:outputText value="Фамилия:"></h:outputText>
+        <h:inputText label="Фамилия"
+                     value="#{customer.lastName}"
+                     required="true"
+                     validator="#{alphaValidator.validateAlpha}">
+          <f:validateLength minimum="2" maximum="30">
+          </f:validateLength>
+        </h:inputText>
+        <h:outputText value="Email:">
+        </h:outputText>
+        <h:inputText label="Email" value="#{customer.email}">
+          <f:validator validatorId="emailValidator" />
+        </h:inputText>
+        <h:panelGroup></h:panelGroup>
+        <h:commandButton action="confirmation" value="Сохранить">
+        </h:commandButton>
+      </h:panelGrid>
+    </h:form>
+  </h:body>
+</html>
+

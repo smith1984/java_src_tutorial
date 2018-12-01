@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+   <h:head>
+      <title>#{msgs.windowTitle_smp}</title>
+   </h:head>
+   <h:body>
+      #{msgs.pageTitle}
+      <h:form>
+         <h:dataTable value="#{tableData.names}" var="name">
+            <h:column>
+               #{name.last},
+            </h:column>
+
+            <h:column>
+               #{name.first}
+            </h:column>
+         </h:dataTable>
+      </h:form>
+       
+        <h:form>
+         <h:dataTable value="#{tableData.names}" var="name"
+                      captionStyle="font-size: 0.95em; font-style:italic"
+                      style="width: 250px;">
+
+            <f:facet name="caption">An Array of Names</f:facet>
+
+            <h:column headerClass="columnHeader" footerClass="columnFooter">
+               <f:facet name="header">#{msgs.lastnameColumn}</f:facet>
+
+               #{name.last},
+
+               <f:facet name="footer">#{msgs.alphanumeric}</f:facet>
+            </h:column>
+
+            <h:column headerClass="columnHeader" footerClass="columnFooter">
+               <f:facet name="header">#{msgs.firstnameColumn}</f:facet>
+
+               #{name.first}
+
+               <f:facet name="footer">#{msgs.alphanumeric}</f:facet>
+            </h:column>
+         </h:dataTable>
+      </h:form>
+       
+        <h:form>
+         <h:dataTable value="#{tableData.names}" var="name">
+            <h:column>
+               <f:facet name="header">
+                  <h:outputText value="#{msgs.editColumn}" 
+                                style="font-weight: bold"/>
+               </f:facet>
+               <h:selectBooleanCheckbox value="#{name.editable}" onclick="submit()"/>
+            </h:column>
+            <h:column>
+               <f:facet name="header">
+                  <h:outputText value="#{msgs.lastnameColumn}" 
+                                style="font-weight: bold"/>
+               </f:facet>
+               <h:inputText value="#{name.last}" rendered="#{name.editable}" 
+                            size="10"/>
+               <h:outputText value="#{name.last}" rendered="#{not name.editable}"/>
+            </h:column>
+            <h:column>
+               <f:facet name="header">
+                  <h:outputText value="#{msgs.firstnameColumn}" 
+                                style="font-weight: bold"/>
+               </f:facet>
+               <h:inputText value="#{name.first}" rendered="#{name.editable}" 
+                            size="10"/>
+               <h:outputText value="#{name.first}" rendered="#{not name.editable}"/>
+            </h:column>
+         </h:dataTable>
+         <h:commandButton value="#{msgs.saveChangesButtonText}" 
+                          action="#{tableData.save}"/>
+      </h:form>
+   </h:body>
+</html>

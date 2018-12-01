@@ -1,0 +1,4 @@
+com\corejsf\PaymentBean.class
+com\corejsf\CreditCardConverter.class
+com\corejsf\CreditCard.class
+com\corejsf\util\Messages.class
